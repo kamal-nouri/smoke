@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+.main_img{
+    margin-bottom: -7%;
+}
+
+.main_img div img{
+    min-width: 100%;
+    height: 80%;
+} 
+.cathome {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.cathome div a img{
+    width:70% ;
+    height: 70%;
+}
+.cathome div p{
+    font-size:100%;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
+.accessorieshome{
+    text-align: center;
+}
+.electronichome{
+    text-align: right;
+}
+.offer div a img{
+    width: 80%;
+}
+.offer div p{
+    margin-top: 110px;
+
+}
+.category{
+    padding-right: 84px;
+}
+    
+
+</style>
+
+<div class="container">
+    <div class=" main_img row">
+        <div class="col-lg">
+        <img src="{% static 'img/home.jpg' %}"alt="Main Img">
+        </div>
+    </div>
+
+    <div  class="cathome row">
+        <div class="col-lg">
+            <a href=""><img src="{% static 'img/shisahome.jpg' %}"  alt="Shisha"></a>
+            <p class="category">SHISHA</p>
+        </div>
+        <div  class="accessorieshome col-lg">
+            <a href=""><img src="{% static 'img/accessorieshome.jpg' %}"   alt="Shisha"></a>
+            <p>ACCESSORIES</p>
+        </div>
+        <div class="electronichome col-lg">
+            <a href=""><img src="{% static 'img/electronichome .png' %}"   alt="Shisha"></a>
+            <p>ELECTRONIC</p>
+        </div>
+    </div>
+    <div class="offer row">
+        <div class="col-lg">
+            <a href=""><img src="{% static 'img/offerhome.jpg' %}"   alt="Shisha"></a>
+        </div>
+        <div class="col-lg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}
+
+<!-- <div class="row">
+    <div class="col-lg">
+1 of 2
+    </div>
+    <div class="col-lg">
+2 of 2
+    </div> -->
