@@ -20,11 +20,17 @@
       .nav-link {
         font-size: 20px;
       }
+      .social img {
+        width: 40px;
+      }
+      .copyright {
+        font-size: 18px;
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container pb-3">
           <a class="navbar-brand mr-5" href="#"><img src="{% static 'img/smoke_logo.svg' %}" alt="Smoke Logo" /></a>
           <button
@@ -49,7 +55,35 @@
       </nav>
     </header>
     <main class="container">{% block content %}{% endblock %}</main>
-    <footer class="container"></footer>
+    <footer class="bg-light">
+      <div class="container p-4">
+        <div class="row mb-4">
+          <div class="col-lg">
+            <h3>About Us:</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsa expedita adipisci molestiae hic nam dolore distinctio consequatur
+              veniam non. Deleniti dicta odit laudantium in asperiores vero corrupti, provident perspiciatis.
+            </p>
+          </div>
+          <div class="col-lg">
+            <h3>Contact Us:</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsa expedita adipisci molestiae hic nam dolore distinctio consequatur
+              veniam non. Deleniti dicta odit laudantium in asperiores vero corrupti, provident perspiciatis.
+            </p>
+          </div>
+          <div class="col-lg">
+            <h3>Follow Us:</h3>
+            <div class="social">
+              <a class="mr-2" href="#"><img src="{% static 'img/fb_icon.svg' %}" alt="FB Icon" /></a>
+              <a href="#"><img src="{% static 'img/instagram.svg' %}" alt="Instagram Icon" /></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="copyright text-center">Copyright&copy;2020 - All Rights Reserved</div>
+      </div>
+    </footer>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
