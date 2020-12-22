@@ -1,66 +1,63 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
+<script src="{% static 'js/script.js' %}"></script>
 <style>
-    .top_part {
-        display: flex;
-    }
 
-    .top_part h3 {
-        display: inline-block;
+.cathome {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.cathome div a img{
+    width:70% ;
+    height: 70%;
+}
+.cathome div p{
+    font-size:100%;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
+.accessorieshome{
+    text-align: center;
+}
+.electronichome{
+    text-align: right;
+}
+.category{
+    padding-right: 84px;
+}
 
-    }
-
-    .top_part hr {
-        width: 70%;
-        height: 1px;
-        margin-left: 1px;
-        margin-top: 39px;
-    }
-
-    .middle {
-        display: flex;
-        
-    }
-
-    .main_image {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .main_image img {
-        width: 180px;
-        height: 250px;
-        margin: 40px 40px 40px 170px;
-    }
-
-    .content {
-        display: grid;
-        text-align: center;
-    }
-
-    .content a {
-        padding-left: 134px;
-    }
-
-    .content_items img {
-        width: 90px;
-        height: 100px;
-    }
-
-    .items {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .content_items {
-        display: grid;
-        text-align: -webkit-center;
-    }
 </style>
-<div>
-    
+<div class="container">
+    <div  class="cathome row">
+        <div class="col-lg">
+            <a href=""><img src="{% static 'img/shisahome.jpg' %}"  alt="Shisha"></a>
+            <p class="category">SHISHA</p>
+        </div>
+        <div  class="accessorieshome col-lg">
+            <a href=""><img src="{% static 'img/accessorieshome.jpg' %}"   alt="Shisha"></a>
+            <p>ACCESSORIES</p>
+        </div>
+        <div class="electronichome col-lg">
+            <a href=""><img src="{% static 'img/electronichome .png' %}"   alt="Shisha"></a>
+            <p>ELECTRONIC</p>
+        </div>
+    </div>
+    <div  class="cathome row">
+        <div class="col-lg">
+            <h2>category name</h2>
+        </div>
+    </div>
+    <div  class="cathome row">
+        <div class="col-lg">
+            <h2>category name</h2>
+        </div>
+    </div>
+
+
 </div>
 
 {% endblock content %}
