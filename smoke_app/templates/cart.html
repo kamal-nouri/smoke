@@ -1,19 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<style>
-    .up {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .end {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
 <div class="up">
     <h3>Items added to Cart</h3>
     <a href="#">Back Shopping</a>

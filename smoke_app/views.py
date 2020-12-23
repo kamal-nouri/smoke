@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect,HttpResponse
+from django.http import JsonResponse
 import bcrypt
 from .models import User, Product , Cart,Order
 from django.contrib import messages
@@ -6,9 +7,23 @@ from django.utils.dateparse import parse_date
 import re
 import datetime
 
-def root(request):
-    # if "user" in request.session:
-    #     return redirect('/')
+
+def shisha_cat(request):
+    return render(request,'category.html')
+
+def accessories_cat(request):
+    return render(request,'category.html')
+
+def electronic_cat(request):
+    return render(request,'category.html')
+
+def autocomplete(request):
+    if 'term' in request.GET:
+        Q = Product.objects.filter(name__istartswith=request.GET.get('term'))
+        names=list()
+        for product in Q :
+            name.append(product.name)
+        return JsonResponse(names ,safe=False)
     return render(request,"home.html")
 
 def registration(request):

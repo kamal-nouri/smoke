@@ -1,0 +1,12 @@
+
+.up {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.end {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
