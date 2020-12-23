@@ -6,11 +6,9 @@ from django.utils.dateparse import parse_date
 import re
 import datetime
 
-def index(request):
-    return render(request,'page2.html')
-
-
 def root(request):
+    # if "user" in request.session:
+    #     return redirect('/')
     return render(request,"home.html")
 
 def registration(request):
@@ -19,60 +17,41 @@ def registration(request):
 def register(request):
     if request.method=="POST":
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-        today = datetime.datetime.now().strftime("%Y%m%d")
+        # today = datetime.datetime.now().strftime("%Y%m%d")
         errors = {}
         if len(request.POST['first_name']) < 2:
             errors["first_name"] = "This name is too short"
-            if len(errors) > 0:
-                for key, value in errors.items():
-                    messages.error(request, value)
-                    return redirect('/register')
         if len(request.POST['last_name']) < 2:
             errors["last_name"] = "This name is too short go to court and change your name"        
-            if len(errors) > 0:
-                for key, value in errors.items():
-                    messages.error(request, value)
-                    return redirect('/register')
         if not EMAIL_REGEX.match(request.POST['email']):                
             errors['email'] = "Invalid email address!"
-            for key, value in errors.items():
-                if len(errors) > 0:
-                    messages.error(request, value)
-                    return redirect('/register')
+        if len(request.POST['password']) < 8:
+            errors["password"] = "password is to short"        
+        if request.POST['password']!=request.POST['confirm']:
+            errors['confirm'] = "not matching!!!"
         all_users_emails = User.objects.all().values_list('email', flat=True)
         for i in all_users_emails:
             if i == request.POST['email']:
                 errors['email'] = "you already registered !!"
-                for key, value in errors.items():
-                    if len(errors) > 0:
-                        messages.error(request, value)
-                        return redirect('/register')
-        if request.POST['password']!=request.POST['confirm']:
-            errors['confirm'] = "not matching!!!"
+        if len(errors) > 0:
             for key, value in errors.items():
-                if len(errors) > 0:
-                    messages.error(request, value)
-                    return redirect('/register')
-        if len(request.POST['password']) < 8:
-            errors["password"] = "password is to short"        
-            if len(errors) > 0:
-                for key, value in errors.items():
-                    messages.error(request, value)
-                    return redirect('/register')
-        else:   
-            first_name = request.POST['first_name']
-            last_name =request.POST['last_name']
-            email = request.POST['email']
-            password = request.POST['password']
+                messages.error(request, value)
+            return redirect('/registration')
+        else:
+            data ={   
+            'first_name' : request.POST['first_name'],
+            'last_name' :request.POST['last_name'],
+            'email' : request.POST['email'],
+            'password' : request.POST['password']
+            }
             confirm = request.POST['confirm']
             if password==confirm:
-                pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-                users=User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=pw)
+                users=User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=password, is_admin=False)
                 if 'user' not in request.session:
                     request.session['user']=users.id
                     request.session['first_name']=first_name
                     request.session['last_name']=last_name
-                    return redirect("/")
+                    return redirect("/success")
             else:
                 return redirect ('/')
 
@@ -83,15 +62,18 @@ def sign_in(request):
 def success(request):
     if 'user' in request.session:
         context={
+            'user':request.session['user'],
             "first_name":request.session['first_name'],
             "last_name":request.session['last_name']
         }
-        return render(request,'home.html',context)
+    return render(request,'home.html',context)
+    
 
-def delete(request):
+def logout(request):
     if "user" in request.session:
         del request.session['user']
     return redirect('/')
+    
 
 def log_in(request):
     if request.method=="POST":
@@ -109,9 +91,9 @@ def log_in(request):
         if len(errors) > 0:
             for key, value in errors.items():
                 messages.error(request, value)
-                return redirect('/')
+                return redirect('/sign_in')
 
-    return("/")
+    return("/sign_in")
 
 
     
