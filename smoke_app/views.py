@@ -6,6 +6,9 @@ from django.utils.dateparse import parse_date
 import re
 import datetime
 
+def index(request):
+    return render(request,'page2.html')
+
 
 def root(request):
     return render(request,"home.html")
@@ -64,7 +67,7 @@ def register(request):
             confirm = request.POST['confirm']
             if password==confirm:
                 pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-                users=User.objects.create(first_name=first_name,last_name=last_name,email=email,password=pw)
+                users=User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=pw)
                 if 'user' not in request.session:
                     request.session['user']=users.id
                     request.session['first_name']=first_name

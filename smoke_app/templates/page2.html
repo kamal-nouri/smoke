@@ -1,0 +1,105 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>shisha part</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+    <script> 
+            $(document).ready(function() {
+        
+        $(".slideshow_container").owlCarousel({
+        items : 5,
+        lazyLoad : true,
+        navigation : true
+        }); 
+        });
+                $(document).ready(function(){
+        $(".slideshow_container").owlCarousel();
+        });
+        $(document).ready(function() {
+            });
+    </script>
+    <style>
+                .shisha{
+            height: 664px;
+            width: 900px;
+            padding: 10px;
+            border-style: dotted;
+            margin: 0;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        .shisha_description{
+            display: flex;
+
+        }
+        .description_img button{
+            border-radius: 25%;
+
+        }
+        .shisha_description div img {
+            height: 250px;
+            width: 250px;
+        }
+        .description_img{
+            margin-top: 74px;
+            margin-left: 45px;
+        }
+        .slideshow_container .item{
+            margin: 3px;
+        }
+        .slideshow_container .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="shisha">
+        <div class="shisha_description">
+            <div >
+                <h3> Shisha</h3>
+                <img src="{% static 'img/shishaa.jpg' %}" alt="shisha">
+            </div>
+            <div class="description_img">
+                <label>
+                    <strong>Price : </strong> <p> 20 $</p>
+                    <strong>Description : </strong> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit
+                                                        . Nesciunt perferendis aspernatur maxime praesentium molestias vel eius, dolores,
+                                                        ducimus tempora quasi rem quas iusto eligendi ullam
+                                                        , commodi corporis cupiditate voluptates aperiam.</p>
+                </label>
+                <button type="button" onclick="alert('Add to Cart')">Add to Cart</button>
+            </div>
+        </div>
+        <div class ="slides">
+            <h3>shisha item </h3><br>
+            <div class="slideshow_container">
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+                <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa"></div>
+            </div>       
+        </div>
+    </div>
+</body>
+</html>
