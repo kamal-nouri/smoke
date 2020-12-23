@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
 def index(request):
-    return render(request, 'category.html')
+    return render(request,'page2.html')
 
 
