@@ -1,67 +1,42 @@
+{% extends "base.html" %}
 {% load static %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>shisha part</title>
-    <link rel="stylesheet" type="text/css" href="style2.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
-    <script> 
-            $(document).ready(function() {
-        
-        $(".slideshow_container").owlCarousel({
-        items : 5,
-        lazyLoad : true,
-        navigation : true
-        }); 
-        });
-                $(document).ready(function(){
-        $(".slideshow_container").owlCarousel();
-        });
-        $(document).ready(function() {
-            });
-    </script>
-    <style>
-                .shisha{
-            height: 664px;
-            width: 900px;
-            padding: 10px;
-            border-style: dotted;
-            margin: 0;
-            font-family: "Lucida Console", "Courier New", monospace;
-        }
-        .shisha_description{
-            display: flex;
+{% block content %}
 
-        }
-        .description_img button{
-            border-radius: 25%;
+<style>
+.shisha{
+    height: 664px;
+    width: 900px;
+    padding: 10px;
+    border-style: dotted;
+    margin: 0;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.shisha_description{
+    display: flex;
 
-        }
-        .shisha_description div img {
-            height: 250px;
-            width: 250px;
-        }
-        .description_img{
-            margin-top: 74px;
-            margin-left: 45px;
-        }
-        .slideshow_container .item{
-            margin: 3px;
-        }
-        .slideshow_container .item img{
-        display: block;
-        width: 100%;
-        height: auto;
-        }
-    </style>
-</head>
-<body>
+}
+.description_img button{
+    border-radius: 25%;
+
+}
+.shisha_description div img {
+    height: 250px;
+    width: 250px;
+}
+.description_img{
+    margin-top: 74px;
+    margin-left: 45px;
+}
+.slideshow_container .item{
+    margin: 3px;
+}
+.slideshow_container .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+
     <div class="shisha">
         <div class="shisha_description">
             <div >
@@ -101,5 +76,4 @@
             </div>       
         </div>
     </div>
-</body>
-</html>
+{% endblock content %}
