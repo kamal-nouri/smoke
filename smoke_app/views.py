@@ -22,7 +22,7 @@ def autocomplete(request):
         Q = Product.objects.filter(name__istartswith=request.GET.get('term'))
         names=list()
         for product in Q :
-            name.append(product.name)
+            names.append(product.name)
         return JsonResponse(names ,safe=False)
     return render(request,"home.html")
 
