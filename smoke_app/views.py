@@ -13,3 +13,8 @@ def accessories_cat(request):
 def electronic_cat(request):
     return render(request,'category.html')
 
+
+
+
+
+
