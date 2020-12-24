@@ -163,18 +163,55 @@ def add_to_cart(request, id):
 
 
 # ============================================================================
+# by kamal part2 insert ,update,delete
+def product(request):
+    products=Product.objects.all()
+    context={
+        "products":products
+    }
+    return render(request,"product.html",context)
 
+def edit_product(request,id):
+    product=Product.objects.get(id=id)
+    context={
+        "product":product
+    }
+    return render(request,'edit.html',context)
+    
+def update_product(request,product_id):
+    if request.method=="POST":
+        product=Product.objects.get(id=product_id)
+        product.name=request.POST['Product_name']
+        product.category=request.POST['category']
+        product.price=int(request.POST['price'])
+        product.description=request.POST['description']
+        product.stock=int(request.POST['stock'])
+        product.save()
+        
+    return redirect('/update')
 
+def update(request):
+    return redirect("/product")
 
+def delete_product(request,id):
+        product=Product.objects.get(id=id)
+        product.delete()
+        return redirect("/product")
 
+def insert_product(request):
+    if request.method=="POST":
+        name=request.POST['Product_name']
+        category=request.POST['category']
+        price=int(request.POST['price'])
+        description=request.POST['description']
+        stock=int(request.POST['stock'])
+        Product.objects.create(name=name,category=category,price=price,description=description,stock=stock)
+    return redirect('/product')
 
+def insert(request):
+    return render(request,'insert.html')
 
-
-
-
-
-
-
+# ============================================================================
 
 
 
