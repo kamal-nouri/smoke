@@ -17,6 +17,7 @@ urlpatterns = [
 # by mohammad - link to selected product info page
 
     path('products/<int:id>', views.product_details),
+    path('add_to_cart/<int:id>', views.add_to_cart),
 
 # ============================================================================
 

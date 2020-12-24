@@ -122,6 +122,18 @@ def product_details(request, id):
     }
     return render(request, 'product_details.html', context)
 
+def add_to_cart(request, id):
+    user = User.objects.get_user(request.session['user_id'])
+    product = Product.objects.get_product(id)
+    Cart.objects.create(
+    user = user,
+    product = product,
+    order = None,
+    quantity = request.POST['quantity']
+    )
+
+
+
 # ============================================================================
 
 
