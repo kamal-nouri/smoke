@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect,HttpResponse
+from django.http import JsonResponse
 import bcrypt
 from .models import User, Product , Cart,Order
 from django.contrib import messages
@@ -16,9 +17,13 @@ def accessories_cat(request):
 def electronic_cat(request):
     return render(request,'category.html')
 
-def root(request):
-    # if "user" in request.session:
-    #     return redirect('/')
+def autocomplete(request):
+    if 'term' in request.GET:
+        Q = Product.objects.filter(name__istartswith=request.GET.get('term'))
+        names=list()
+        for product in Q :
+            names.append(product.name)
+        return JsonResponse(names ,safe=False)
     return render(request,"home.html")
 
 def registration(request):
