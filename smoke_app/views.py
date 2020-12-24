@@ -1,22 +1,37 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.http import JsonResponse
-import bcrypt
 from .models import User, Product , Cart,Order
 from django.contrib import messages
 from django.utils.dateparse import parse_date
 import re
 import datetime
 
-
+# ============================================================================
+# by kamal - selected category page functionality
 def shisha_cat(request):
-    return render(request,'category.html')
+    products = Product.objects.filter(category = 'shisha')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+
 
 def accessories_cat(request):
-    return render(request,'category.html')
+    products = Product.objects.filter(category = 'accessories')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+    
 
 def electronic_cat(request):
-    return render(request,'category.html')
-
+    products = Product.objects.filter(category = 'electronics')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+    
+# ============================================================================
 def autocomplete(request):
     if 'term' in request.GET:
         Q = Product.objects.filter(name__istartswith=request.GET.get('term'))
@@ -136,8 +151,18 @@ def add_to_cart(request, id):
 
 # ============================================================================
 
+# ============================================================================
+# by dalia -get items in cart .
+# def cart_items(request):
+#     user=User.objects.get_user(request.session['user_id'])
+#     items=Cart.objects.filter(**{user=user, order=None})
+#     context={
+#         'items': items
+#     }
+#     return render(request, 'cart.html', context)
 
 
+# ============================================================================
 
 
 
