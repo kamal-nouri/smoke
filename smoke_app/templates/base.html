@@ -15,20 +15,19 @@
     />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
-    <script> 
-      $(document).ready(function() {
-        $(".slideshow_container").owlCarousel({
-          items : 5,
-          lazyLoad : true,
-          navigation : true
-        }); 
+    <script>
+      $(document).ready(function () {
+        $('.slideshow_container').owlCarousel({
+          items: 5,
+          lazyLoad: true,
+          navigation: true,
+        });
       });
     </script>
-    
   </head>
   <body>
     <header>
@@ -53,9 +52,8 @@
               {% if not request.session.user %}
               <a class="nav-item nav-link" href="/registration">Register </a>
               <a class="nav-item nav-link" href="/sign_in"> Login</a>
-              {% endif %}
-              {% if request.session.user %}
-              <a class="nav-item nav-link" href="/logout">  Logout</a><br>
+              {% endif %} {% if request.session.user %}
+              <a class="nav-item nav-link" href="/logout"> Logout</a><br />
               {% endif %}
             </div>
           </div>

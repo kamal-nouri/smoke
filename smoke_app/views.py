@@ -105,5 +105,58 @@ def log_in(request):
 
     return("/sign_in")
 
+# ============================================================================
+# by mohammad - selected product info page functionality
 
-    
+def product_details(request, id):
+    product = Product.objects.get_product(id)
+    related_products = Product.objects.filter(category = product.category)
+    context = {
+        'product': product,
+        'related_products': related_products
+    }
+    return render(request, 'product_details.html', context)
+
+# ============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

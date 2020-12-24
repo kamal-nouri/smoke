@@ -12,5 +12,13 @@ urlpatterns = [
     path('success',views.success),
     path('logout',views.logout),
     path('log_in',views.log_in),
-    
+
+# ============================================================================
+# by mohammad - link to selected product info page
+
+    path('products/<int:id>', views.product_details),
+
+# ============================================================================
+
+
 ]
