@@ -1,5 +1,5 @@
 from django.db import models
-import re
+import re, bcrypt
 
 class UserManager(models.Manager):
     def create_user(self, data):
