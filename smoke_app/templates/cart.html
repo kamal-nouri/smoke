@@ -1,44 +1,99 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
-<link rel="stylesheet" href="{% static 'css/cart.css' %}">
-<div class="up">
-    <h3>Items added to Cart</h3>
-    <a href="#">Back Shopping</a>
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="cart-item">
+    <h3>Items In Cart</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price Per Product</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+        <tr>
+            <td>{{item.product.name}}</td>
+            <td>{{item.product.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td><a href="#">delete</a></td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="#">BUY</a>
 </div>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
 
-<div class="end">
-    <a href="">Buy</a>
-    <p>Toltal Price</p>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-lg-4">
+        <img src="{% static 'img/products/'|add:product.name|add:'.jpg' %}" alt="{{ product.name }}" />
+        </div>
+        <div class="col-lg-8">
+        <form action="#" method="POST">
+            <table>
+            <tr>
+                <th scope="row">Category:</th>
+                <td>{{ product.category }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Description:</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Price:</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Stock:</th>
+                <td>{{ product.stock }}</td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="quantity">Quantity:</label></th>
+                <td><input type="number" min="0" max="{{ product.stock }}" id="quantity" class="form-control" /></td>
+            </tr>
+            </table>
+            <button type="submit" class="btn btn-warning">Add to Cart</button>
+        </form>
+        </div>
+    </div>
+    </div>
+    <div class="related-products slides">
+    <h3>Related Products:</h3>
+    <div class="slideshow_container">
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+        <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+    </div>
 </div>
 {% endblock content %}
