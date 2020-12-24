@@ -63,7 +63,7 @@ class ProductManager(models.Manager):
         product.price = data['price']
         product.stock = data['stock']
         product.save()
-
+        
     def delete_product(self, id):
         product = Product.objects.filter(id = id).first()
         product.delete()
@@ -73,8 +73,8 @@ class Product(models.Model):
     category = models.CharField(max_length=100)
     description = models.TextField()
     price = models.FloatField()
-    stock = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    stock = models.FloatField()
+    created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = ProductManager()
 
