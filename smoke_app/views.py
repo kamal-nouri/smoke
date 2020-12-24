@@ -1,22 +1,37 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.http import JsonResponse
-import bcrypt
 from .models import User, Product , Cart,Order
 from django.contrib import messages
 from django.utils.dateparse import parse_date
 import re
 import datetime
 
-
+# ============================================================================
+# by kamal - selected category page functionality
 def shisha_cat(request):
-    return render(request,'category.html')
+    products = Product.objects.filter(category = 'shisha')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+
 
 def accessories_cat(request):
-    return render(request,'category.html')
+    products = Product.objects.filter(category = 'accessories')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+    
 
 def electronic_cat(request):
-    return render(request,'category.html')
-
+    products = Product.objects.filter(category = 'electronics')
+    context = {
+        'products': products
+    }
+    return render(request, 'category.html', context)
+    
+# ============================================================================
 def autocomplete(request):
     if 'term' in request.GET:
         Q = Product.objects.filter(name__istartswith=request.GET.get('term'))
