@@ -63,7 +63,7 @@ def register(request):
             if password==confirm:
                 users=User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=password, is_admin=False)
                 if 'user' not in request.session:
-                    request.session['user']=users.id
+                    request.session['user_id']=users.id
                     request.session['first_name']=first_name
                     request.session['last_name']=last_name
                     return redirect("/success")
@@ -77,7 +77,7 @@ def sign_in(request):
 def success(request):
     if 'user' in request.session:
         context={
-            'user':request.session['user'],
+            'user':request.session['user_id'],
             "first_name":request.session['first_name'],
             "last_name":request.session['last_name']
         }
@@ -86,7 +86,7 @@ def success(request):
 
 def logout(request):
     if "user" in request.session:
-        del request.session['user']
+        del request.session['user_id']
     return redirect('/')
     
 
@@ -95,7 +95,7 @@ def log_in(request):
         user=User.objects.filter(email=request.POST['email'])
         if user:
             if 'user' not in request.session:
-                request.session['user']=user[0].id
+                request.session['user_id']=user[0].id
                 request.session['first_name']=user[0].first_name
                 request.session['last_name']=user[0].last_name
         errors={}

@@ -37,22 +37,9 @@
 <div class="related-products slides">
   <h3>Related Products:</h3>
   <div class="slideshow_container">
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
-    <div class="item"><img src="{% static 'img/shishaa.jpg' %}" alt="shishaa" /></div>
+    {% for item in related_products %}
+    <div class="item"><img src="{% static 'img/products/'|add:item.name|add:'.jpg' %}" alt="{{ item.name }}" /></div>
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}
