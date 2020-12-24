@@ -124,8 +124,18 @@ def product_details(request, id):
 
 # ============================================================================
 
+# ============================================================================
+# by dalia -get items in cart .
+def cart_items(request):
+    user=User.objects.get_user(request.session['user_id'])
+    items=Cart.objects.filter(**{user=user, order=None})
+    context={
+        'items': items
+    }
+    return render(request, 'cart.html', context)
 
 
+# ============================================================================
 
 
 
