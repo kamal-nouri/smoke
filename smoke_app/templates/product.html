@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<a href="/orders">Orders</a>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -24,7 +25,7 @@
         <td>{{product.price}}</td>
         <td>{{product.stock}}</td>
         <td><a href="/edit_product/{{product.id}}">Edit</a></td>
-        <td><a href="/delete_product/{{product.id}}">Delete</a></td>
+        <td><a href="/delete_product/{{product.id}}"><img src="{% static 'img/products/trash.PNG' %}" height="34px" alt="trash"></a></a></td>
       </tr>
       {% endfor %}
     </tbody>

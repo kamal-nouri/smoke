@@ -11,7 +11,7 @@
         </tr>
         </thead>
         <tbody>
-            {% for item in items %}
+            {% for item in cart %}
         <tr>
             <td>{{item.product.name}}</td>
             <td>{{item.product.price}}</td>
@@ -21,7 +21,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="#">BUY</a>
+    <a href="#">BUY</a> 
 </div>
 
 {% endblock content %}

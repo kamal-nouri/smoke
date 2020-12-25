@@ -6,7 +6,11 @@
       <img src="{% static 'img/products/'|add:product.name|add:'.jpg' %}" alt="{{ product.name }}" />
     </div>
     <div class="col-lg-8">
+<<<<<<< HEAD
       <form action="/add_to_cart/{{ product.id }}" method="POST">
+=======
+      <form action="/cart/{{product.id}}" method="POST">
+>>>>>>> bf009cc0f68285d115d147f8d7e7dedb556f6040
         {% csrf_token %}
         <table>
           <tr>
@@ -27,10 +31,14 @@
           </tr>
           <tr>
             <th scope="row"><label for="quantity">Quantity:</label></th>
+<<<<<<< HEAD
             <td><input type="number" min="0" max="{{ product.stock }}" name="quantity" id="quantity" class="form-control" /></td>
+=======
+            <td><input type="number" min="0" max="{{ product.stock }}"  name="quantity" id="quantity" class="form-control" /></td>
+>>>>>>> bf009cc0f68285d115d147f8d7e7dedb556f6040
           </tr>
         </table>
-        <button type="submit" class="btn btn-warning">Add to Cart</button>
+        <button type="submit" class="btn btn-warning" >Add to Cart</button>
       </form>
     </div>
   </div>

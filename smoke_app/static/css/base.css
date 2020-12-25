@@ -1,6 +1,6 @@
 
 .navbar-brand img {
-width: 250px;
+    width: 170px;
 }
 .nav-link {
 font-size: 20px;
@@ -11,3 +11,13 @@ width: 40px;
 .copyright {
 font-size: 18px;
 }
+#navleft {
+    display: grid;
+  }
+  .butt{
+    width: 258px;
+  border-radius: 5px;
+  }
+  header{
+    height: 140px;
+  }
