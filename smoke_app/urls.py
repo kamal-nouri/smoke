@@ -19,6 +19,10 @@ urlpatterns = [
     path('delete_product/<id>',views.delete_product),
     path('insert_product',views.insert_product),
     path('insert',views.insert),
+    path('orders',views.orders),
+    path('cart/<id>',views.cart_items),
+    path('cart',views.cart),
+
 
 # ============================================================================
 # by mohammad - link to selected product info page

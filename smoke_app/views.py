@@ -77,7 +77,7 @@ def register(request):
             confirm = request.POST['confirm']
             if password==confirm:
                 users=User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=password, is_admin=False)
-                if 'user' not in request.session:
+                if 'user_id' not in request.session:
                     request.session['user_id']=users.id
                     request.session['first_name']=first_name
                     request.session['last_name']=last_name
@@ -90,7 +90,7 @@ def sign_in(request):
     return render(request,'log_in.html')
 
 def success(request):
-    if 'user' in request.session:
+    if 'user_id' in request.session:
         context={
             'user':request.session['user_id'],
             "first_name":request.session['first_name'],
@@ -100,7 +100,7 @@ def success(request):
     
 
 def logout(request):
-    if "user" in request.session:
+    if "user_id" in request.session:
         del request.session['user_id']
     return redirect('/')
     
@@ -109,7 +109,7 @@ def log_in(request):
     if request.method=="POST":
         user=User.objects.filter(email=request.POST['email'])
         if user:
-            if 'user' not in request.session:
+            if 'user_id' not in request.session:
                 request.session['user_id']=user[0].id
                 request.session['first_name']=user[0].first_name
                 request.session['last_name']=user[0].last_name
@@ -141,14 +141,24 @@ def product_details(request, id):
 
 # ============================================================================
 # by dalia -get items in cart .
-# def cart_items(request):
-#     user=User.objects.get_user(request.session['user_id'])
-#     items=Cart.objects.filter(**{user=user, order=None})
-#     context={
-#         'items': items
-#     }
-#     return render(request, 'cart.html', context)
-
+def cart_items(request,id):
+    # if "user_id" in request.session:
+    # request.session['user_id']=1
+    user=User.objects.filter(id=1)
+    product = Product.objects.get(id=id)
+    cart = Cart.objects.create(
+        user = user,
+        product = product,
+        quantity = request.POST['quantity'],
+        order=None
+    )
+    context={
+        "cart":cart
+    }
+    # return redirect('/cart')
+    return render(request, 'cart.html', context)
+def cart(request):
+    return render(request, 'cart.html')
 
 # ============================================================================
 # by kamal part2 insert ,update,delete
@@ -200,7 +210,13 @@ def insert(request):
     return render(request,'insert.html')
 
 # ============================================================================
-
+# by kamal part2 insert ,update,delete
+def orders(request):
+    orders=Order.objects.all()
+    context={
+        'orders':orders
+    }
+    return render(request,'order.html',context)
 
 
 
