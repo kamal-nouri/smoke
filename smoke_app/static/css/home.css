@@ -1,107 +1,95 @@
-.categories .card-img-overlay {
-  background-color: rgba(100, 100, 100, 0.4);
+.categories .card-img-overlay
+{
+	background-color: rgba(100, 100, 100, 0.4);
 }
-
-.categories .card-img-overlay:hover {
-  background-color: rgba(100, 100, 100, 0.6);
+.categories .card-img-overlay:hover
+{
+	background-color: rgba(100, 100, 100, 0.6);
 }
-
-.categories .card-img-overlay h2 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 800;
+.categories .card-img-overlay h2
+{
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 800;
 }
-
-.offer p {
-  text-align: justify;
+.offer p
+{
+	text-align: justify;
 }
-.carousel-inner{
-  border-radius: 5px;
+.carousel-inner
+{
+	border-radius: 5px;
 }
-.card{
-  box-shadow: 14px 5px 20px gray;
+.card
+{
+	box-shadow: 14px 5px 20px gray;
 }
-.cards-list {
-  z-index: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.cards-list
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+	z-index: 0;
 }
-
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  cursor: pointer;
-  transition: 0.4s;
+.card
+{
+	border-radius: 40px;
+	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+	cursor: pointer;
+	height: 300px;
+	margin: 30px auto;
+	transition: 0.4s;
+	width: 300px;
 }
-
-.card .card_image {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
+.card .card_image
+{
+	border-radius: 40px;
+	height: inherit;
+	width: inherit;
 }
-
-.card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
+.card .card_image img
+{
+	border-radius: 40px;
+	height: inherit;
+	object-fit: cover;
+	width: inherit;
 }
-
-.card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
+.card .card_title
+{
+	border-radius: 0px 0px 40px 40px;
+	font-family: sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	height: 40px;
+	margin-top: -80px;
+	text-align: center;
 }
-
-.card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+.card:hover
+{
+	box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+ -5px -5px 30px 15px rgba(0,0,0,0.22);
+	transform: scale(0.9, 0.9);
 }
-
-.title-white {
-  color: white;
+.title-white
+{
+	color: white;
 }
-
-.title-black {
-  color: black;
+.title-black
+{
+	color: black;
 }
-
-@media all and (max-width: 500px) {
-  .card-list {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
+@media all and (max-width: 500px)
+{
+	.card-list
+	{
+		flex-direction: column;
+	}
 }
-.coler{
-  color: rgb(109, 69, 8);
-  font-size: x-large;
-  font-weight: bolder;
-  text-decoration: none;
+.coler
+{
+	color: rgb(109, 69, 8);
+	font-size: x-large;
+	font-weight: bolder;
+	text-decoration: none;
 }
-
-
-/*
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  transition: 0.4s;
-}
-*/
