@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<h3>Orders</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Order Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+    <tr>
+      <th scope="row">{{order.id}}</th>
+      <td>{{order.total_price}}</td>
+      <td>{{order.status}}</td>
+      <td>{{order.created_at}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

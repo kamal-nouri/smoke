@@ -1,0 +1,17 @@
+.categories .card-img-overlay {
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+.categories .card-img-overlay:hover {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.categories .card-img-overlay h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.offer p {
+  text-align: justify;
+}
