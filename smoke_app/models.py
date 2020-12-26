@@ -47,7 +47,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField()
     stock = models.IntegerField()
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = ProductManager()
 
@@ -56,11 +56,16 @@ class Product(models.Model):
 class OrderManager(models.Manager):
     def create_order(self, user_id):
         user = User.objects.get_user(user_id)
-        cart_items = Cart.objects.filter(user)
+        cart_items = Cart.objects.filter(user = user).filter(order = None)
         total_price = 0
         if cart_items:
             order = Order.objects.create()
             for item in cart_items:
+                if not item.quantity <= item.product.stock:
+                    return None
+                product = Product.objects.get_product(item.product.id)
+                product.stock -= item.quantity
+                product.save()
                 total_price += item.product.price * item.quantity
                 order.cart_items.add(item)
             order.total_price = total_price
@@ -90,19 +95,19 @@ class CartManager(models.Manager):
         )
         return cart_item
 
-    def get_cart_item(self, id):
-        return Cart.objects.filter(id = id).first()
+    def get_cart_items(self, user_id):
+        user = User.objects.get_user(user_id)
+        return Cart.objects.filter(user = user).filter(order = None)
+
+    def delete_cart_item(self, id):
+        cart_item = Cart.objects.filter(id = id).first()
+        cart_item.delete()
 
 class Cart(models.Model):
     user = models.ForeignKey(User, related_name='cart_items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='carts', on_delete=models.CASCADE)
     quantity = models.IntegerField()
-<<<<<<< HEAD
-    order = models.ForeignKey(Order, related_name='details', on_delete=models.CASCADE, null=True)
+    order = models.ForeignKey(Order, related_name='cart_items', null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-=======
-    order = models.ForeignKey(Order, related_name='cart_items', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now=True)
->>>>>>> bf009cc0f68285d115d147f8d7e7dedb556f6040
     updated_at = models.DateTimeField(auto_now=True)
     objects = CartManager()

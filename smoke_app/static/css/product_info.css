@@ -1,0 +1,21 @@
+.product_info img {
+  display: block;
+  width: 100%;
+}
+
+.product_info tr {
+  height: 50px;
+}
+
+.product_info th {
+  width: 150px;
+}
+
+.product_info button {
+  font-weight: 800;
+}
+
+.owl-carousel img {
+  display: block;
+  width: 90%;
+}
