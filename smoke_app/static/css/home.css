@@ -15,3 +15,9 @@
 .offer p {
   text-align: justify;
 }
+.carousel-inner{
+  border-radius: 5px;
+}
+.card{
+  box-shadow: 14px 5px 20px gray;
+}
