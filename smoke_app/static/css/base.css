@@ -32,3 +32,11 @@ footer p
 .shad{
 	box-shadow: 0px 12px 23px 18px black;
 }
+
+.shad tr{
+	height: 40px;
+}
+
+.shad th{
+	width: 100px;
+}

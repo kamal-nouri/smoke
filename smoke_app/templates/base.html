@@ -26,6 +26,14 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
   <script src="{% static 'js/owl.carousel.js' %}"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $('#product').autocomplete({
+        source: '{% url 'home' %}'
+        });
+    });
+  </script>
 </head>
 
 <body>
@@ -45,15 +53,6 @@
                 placeholder="Search" aria-label="Search" />
               <button class="btn btn-outline-secondary " type="submit">Search</button>
             </form>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script>
-              $(function () {
-                $('#product').autocomplete({
-                  source: '{% url 'home' %}'
-                  });
-              });
-            </script>
           </div>
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -99,28 +98,30 @@
     <div class="container">
       <div class="row text-center text-lg-left">
         <div class="col-lg-5 px-4 pb-4">
-          <h4 class="mb-3">About Us:</h4>
+          <h4 class="mb-3">About Us</h4>
           <p>
-            Every company has a story to tell,our story started when we decided to make a carrier shift.That was the
-            beggining for this project.Its not simple,its chalenging to give more than you can,to challenge your mind
-            and say i can do better.There is no such thing "i can't",there is just i can and will.Our idea came from the
-            large demanding for shisha and its accessories.
+            Every company has a story to tell. Our story started when we decided to make a carrier shift. That was the beggining for this project. It's not easy. It's chalenging to give more than you can, to challenge your mind and say I can do it. There is no such thing I CAN'T, there is just I can and will.Our idea came from the large demanding for SHISHA.
           </p>
         </div>
         <div class="col-lg-5 px-4 pb-4">
-          <h4 class="mb-3">Contact Us:</h4>
-          <p>
-            Mobile:00972-599-000-000
-          </p>
-          <p>
-            Email.smoke.ar@ex.com
-          </p>
-          <p>
-            smoke/facebook.com
-          </p>
+          <h4 class="mb-3">Contact Us</h4>
+          <table>
+              <tr>
+                <th scope="row">MOBILE :</th>
+                <td>0599-000-000</td>
+              </tr>
+              <tr>
+                <th scope="row">EMAIL :</th>
+                <td>smoke@ex.com</td>
+              </tr>
+              <tr>
+                <th scope="row">ADDRESS :</th>
+                <td>Ramallah</td>
+              </tr>
+          </table>
         </div>
         <div class="col-lg-2 px-4 pb-4">
-          <h4 class="mb-3">Follow Us:</h4>
+          <h4 class="mb-3">Follow Us</h4>
           <div class="social-media">
             <a href="#" class="mr-2"><img src="{% static 'img/icons/facebook.svg' %}" alt="FB Icon" /></a>
             <a href="#"><img src="{% static 'img/icons/instagram.svg' %}" alt="Instagram Icon" /></a>
