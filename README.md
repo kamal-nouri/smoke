@@ -7,3 +7,5 @@ Contributors:
 - Dali Abu-Latifa
 - kamal Nouri
 - Mohammad Yasein
+
+![alt text](https://github.com/kamal-nouri/smoke/home-page.JPG?raw=true)
