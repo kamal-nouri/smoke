@@ -1,6 +1,6 @@
 # SMOKE WEB PROJECT
 
-**This is an *e-commerce* website for buying shisha tools and accessories.**
+*This is an **E-COMMERCE** website for buying shisha tools and accessories.*
 
 Contributors:
 - Bahaa Hahim
