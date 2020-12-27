@@ -29,28 +29,6 @@ footer p
 {
 	width: 20px;
 }
-.button-style
-{
-	background-color: black;
-	border: solid 1px transparent;
-	border-radius: 18px;
-	color: #fff;
-	cursor: pointer;
-	display: block;
-	font-size: 18px;
-	font-weight: 300;
-	height: 36px;
-	transition: all .1s ease-in-out;
-	width: 150px;
-}
-.button-style:hover
-{
-	background-color: transparent;
-	border-color: #1c89ff;
-	color: #1c89ff;
-	transition: all .1s ease-in-out;
-}
-.butt
-{
-	border-radius: 3px;
+.shad{
+	box-shadow: 0px 12px 23px 18px black;
 }

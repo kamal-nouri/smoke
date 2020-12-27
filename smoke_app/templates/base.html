@@ -41,9 +41,9 @@
           <div class="d-inline-block mx-auto">
             <form class="form-inline" action="/search" method="POST">
               {% csrf_token %}
-              <input class="form-control mr-2 " style="border-radius: 20px;" type="text" name="product" id="product"
+              <input class="form-control mr-2 "  type="text" name="product" id="product"
                 placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-secondary button-style" type="submit">Search</button>
+              <button class="btn btn-outline-secondary " type="submit">Search</button>
             </form>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -95,7 +95,7 @@
     </nav>
   </header>
   <main class="container text-center text-lg-left py-5">{% block content %}{% endblock %}</main>
-  <footer class="bg-light pt-5">
+  <footer class="bg-light pt-5 shad">
     <div class="container">
       <div class="row text-center text-lg-left">
         <div class="col-lg-5 px-4 pb-4">
