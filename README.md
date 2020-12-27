@@ -1,9 +1,9 @@
 # SMOKE WEB PROJECT
 
-This is an e-commerce website for buying shisha tools and accessories.
+**This is an *e-commerce* website for buying shisha tools and accessories.**
 
 Contributors:
-Bahaa Hahim
-Dali Abu-Latifa
-kamal Nouri
-Mohammad Yasein
+- Bahaa Hahim
+- Dali Abu-Latifa
+- kamal Nouri
+- Mohammad Yasein
