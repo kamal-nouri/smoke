@@ -8,4 +8,4 @@ Contributors:
 - kamal Nouri
 - Mohammad Yasein
 
-![alt text](https://github.com/kamal-nouri/smoke/home-page.JPG?raw=true)
+![Home Page](https://github.com/kamal-nouri/smoke/blob/master/home-page.JPG?raw=true)
