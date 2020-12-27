@@ -2,6 +2,8 @@
 
 *This is an **E-Commerce** website for buying shisha tools and accessories.*
 
+**IPv4 Public IP:** 3.134.108.71
+
 Contributors:
 - Bahaa Hahim
 - Dali Abu-Latifa
