@@ -1,0 +1,16 @@
+.cat-items h1 {
+  border-bottom: 1px solid #aaa;
+  color: #444;
+}
+
+.cat-items a {
+  display: inline-block;
+  height: 300px;
+  width: 274px;
+  text-align: center;
+}
+
+.cat-items img {
+  display: block;
+  width: 200px;
+}

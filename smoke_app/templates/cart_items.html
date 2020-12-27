@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% load static %} {% block content %} {% if messages %}
+<div>
+  {% for message in messages %} {% if message.tags == 'error' %}
+  <p class="alert alert-danger">{{ message }}</p>
+  {% elif message.tags == 'success' %}
+  <p class="alert alert-success">{{ message }}</p>
+  {% endif %} {% endfor %}
+</div>
+{% endif %}
+<div class="cart_items">
+  <h3>Cart Items</h3>
+  <table class="table mb-5">
+    <thead>
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>
+          <a href="/cart/{{ item.id }}/delete"><img src="{% static 'img/icons/trash.svg' %}" alt="Trash Icon" /></a>
+        </td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="3">Total Price</td>
+        <td>{{ total_price }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="/cart/order" class="btn btn-outline-success">BUY</a>
+</div>
+{% endblock content %}
