@@ -6,7 +6,7 @@
 
 **Contributors:**
 - Bahaa Hahim
-- Dali Abu-Latifa
+- Dalia Abu-Latifa
 - kamal Nouri
 - Mohammad Yasein
 
